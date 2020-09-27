@@ -1,0 +1,17 @@
+@page "/guestform"
+@inherits GuestFormBase
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<EditForm Model="@CurrentGuest" OnValidSubmit="@CurrentGuest.Update">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="CurrentGuest.FirstName" />
+    <InputText id="name" @bind-Value="CurrentGuest.LastName" />
+    <InputText id="name" @bind-Value="CurrentGuest.PhoneNumber" />
+
+    <button type="submit">Submit</button>
+</EditForm>
